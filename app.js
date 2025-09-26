@@ -63,3 +63,34 @@ bubbleContainer.addEventListener("click", (e) => {
   }
 });
 
+//function to game over
+function gameOver() {
+  if (score > highestScore) {
+    highestScore = score;
+    setHighestScore();
+    highestScoreBox.innerText = highestScore;
+  }
+
+  //creating game over screen
+  clutter = `<div class='game'>
+            <h1>Game Over</h1>
+            <button class='play-again'>Play Again</button>
+          </div>`;
+  bubbleContainer.innerHTML = clutter;
+  gameRestart(); //calling game restart function
+}
+
+//function to restart game
+function gameRestart() {
+  let restartBtn = document.querySelector(".play-again"); //selecting play again button
+  restartBtn.addEventListener("click", function () {
+    score = 0;
+    scoreBox.innerText = score;
+    time = 60;
+    timerBox.innerText = time;
+    newHit();
+    clutter = ""; //empty container to create new bubbles otherwise old bubbles will remain
+    createBubble();
+    runTimer();   //calling run timer function
+  });
+}
