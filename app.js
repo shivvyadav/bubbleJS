@@ -16,6 +16,35 @@ let highestScoreBox = document.getElementById("highestScore");
 let highestScore = getHighestScore();
 highestScoreBox.innerText = highestScore;
 
+//function to get highest score
+function getHighestScore() {
+  let highestScore = localStorage.getItem("highestScore");
+  if (highestScore === null) {
+    highestScore = 0;
+  }
+  return highestScore;
+}
+
+// function to set highest score
+function setHighestScore() {
+  localStorage.setItem("highestScore", highestScore);
+}
+
+//function to run timer
+function runTimer() {
+  //creating interval which will run every second until time reaches 0
+  let timerInterval = setInterval(() => {
+    if (time > 0) {
+      time--;
+      timerBox.innerText = time;
+    }
+    if (time == 0) {
+      clearInterval(timerInterval); //clearing interval otherwise it will run forever
+      console.log("Time Over");
+      gameOver();
+    }
+  }, 1000);
+}
 
 //function to start game
 let startBtn = document.getElementById("start"); //selecting start button
@@ -91,6 +120,6 @@ function gameRestart() {
     newHit();
     clutter = ""; //empty container to create new bubbles otherwise old bubbles will remain
     createBubble();
-    runTimer();   //calling run timer function
+    runTimer(); //calling run timer function
   });
 }
