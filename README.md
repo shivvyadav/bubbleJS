@@ -14,10 +14,10 @@ The goal is simple: Click the bubble matching the target number before time runs
 - Play Again option after the game ends.
 
 ### Bubble-Game/
-│── index.html # HTML structure
-│── style.css # Styling
-│── script.js # Game logic
-│── README.md # Project documentation
+│── index.html # HTML structure<br>
+│── style.css # Styling<br>
+│── script.js # Game logic<br>
+│── README.md # Project documentation<br>
 
 ## 🕹️ How to Play
 
@@ -30,6 +30,6 @@ The goal is simple: Click the bubble matching the target number before time runs
 - OR you click the wrong bubble ❌
 
 ## 🛠️ Technologies Used
-HTML5 – Structure
-CSS3 – Styling and Layout
-JavaScript (ES6) – Game Logic
+HTML5 – Structure<br>
+CSS3 – Styling and Layout<br>
+JavaScript (ES6) – Game Logic<br>
